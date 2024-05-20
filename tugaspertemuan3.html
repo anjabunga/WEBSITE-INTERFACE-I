@@ -1,0 +1,580 @@
+<!--ANJA BUNGA ADITYA (2210511161)-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tugas 3 Web Programming</title>
+  <!--Tag yang digunakan sebagai inline css dalam html yang berfungsi untuk memberikan style pada website serta
+  memperindah website-->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: "Inter", sans-serif;
+      text-decoration: none;
+    }
+
+    .header-wrapper {
+      max-width: 100%;
+      background-color: #e5e5e5;
+      padding-left: 16px;
+      padding-top: 2px;
+      margin-top: 20px;
+      margin-right: 12px;
+      margin-left: 12px;
+    }
+
+    .header-text {
+      padding-left: 16px;
+      padding-right: 16px;
+      padding-top: 8px;
+      padding-bottom: 8px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .header-text span {
+      color: gray;
+    }
+
+    .container {
+      margin-right: 40px;
+      margin-left: 40px;
+    }
+
+    .bread-wrapper {
+      max-width: 100%;
+      padding-top: 12px;
+      padding-bottom: 12px;
+    }
+
+    .bread-text {
+      padding-top: 8px;
+      padding-bottom: 8px;
+      font-size: 36px;
+      font-weight: 600;
+    }
+
+    .bread-text span {
+      color: gray;
+    }
+
+    .menu-wrapper hr {
+      margin-left: 2px;
+      margin-right: 2px;
+    }
+
+    .menu-list {
+      display: flex;
+      list-style-type: none;
+      gap: 10px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 16px;
+      font-size: 16px;
+    }
+
+    .menu-list li {
+      cursor: pointer;
+    }
+
+    .menu-list li:active {
+      font-weight: bold;
+    }
+
+    .tooltip-wrapper {
+      max-width: 100%;
+      background-color: #ade8f4;
+      padding-left: 16px;
+      padding-top: 16px;
+      padding-bottom: 16px;
+    }
+
+    .tooltip-wrapper p {
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+
+    .blog-wrapper {
+      display: grid;
+      grid-template-columns: 70% 30%;
+      gap: 20px;
+    }
+
+    .left-blog-wrapper {
+      max-width: 100%;
+      padding-bottom: 20px;
+    }
+
+    .right-blog-wrapper {
+      max-width: 100%;
+      padding-left: 36px;
+      margin-right: 20px;
+    }
+
+    .blog-title {
+      color: #0096c7;
+      font-weight: 500;
+      font-size: 16px;
+    }
+
+    .publish-date {
+      font-size: 16px;
+      color: gray;
+      padding-bottom: 12px;
+    }
+
+    .image-wrapper img {
+      max-width: 100%;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      max-height: 800px;
+    }
+
+    .blog-text-wrapper {
+      padding-bottom: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .blog-text {
+      font-size: 16px;
+    }
+
+    .socmed-wrapper {
+      padding-bottom: 16px;
+    }
+
+    .socmed-wrapper-text {
+      font-size: 22px;
+      padding-bottom: 10px;
+    }
+
+    .more-text {
+      font-size: 16px;
+    }
+
+    .more-text:hover {
+      text-decoration: underline;
+    }
+
+    .table-header {
+      max-width: 100%;
+      min-height: 20%;
+      padding: 4px;
+      background-color: #f2f5fa;
+      border-top: 1px solid #a8b5be;
+      padding-right: 10px;
+      padding-left: 10px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .table-header p {
+      font-size: 16px;
+    }
+
+    .table-list {
+      list-style-type: none;
+    }
+
+    .table-list hr {
+      max-width: 100%;
+    }
+
+    .table-list li {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      color: #0096c7;
+    }
+
+    .table-list-wrapper {
+      max-width: 100%;
+      display: flex;
+      padding-bottom: 2px;
+      padding-top: 2px;
+      align-items: center;
+      font-size: 16px;
+    }
+
+    .table-list-wrapper p {
+      padding-top: 5px;
+      padding-bottom: 5px;
+      color: #0096c7;
+    }
+
+    .btn {
+      background-color: #0096c7;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .btn:hover {
+      background-color: #007b94;
+    }
+  </style>
+</head>
+<body>
+    <!-- Berfungsi sebagai Header -->
+    <div class="header-wrapper">
+      <p class="header-text">
+        Rabu, Maret 6, 2024 <span>| 794 users online </span>
+      </p>
+    </div>
+
+    <div class="container">
+
+      <!--Digunakan sebagai judul dari portal bernama FIKPEDIA-->
+      <!-- Breadcrumbs -->
+      <div class="bread-wrapper">
+        <p class="bread-text">FIKPEDIA <span>/ Berita</span></p>
+      </div>
+
+      <!--Menampilkan sub-sub menu yang dapat dipilih oleh user-->
+      <div class="menu-wrapper">
+        <hr style="max-width: 100%" />
+        <div>
+          <ul class="menu-list">
+            <li style="color: black; font-weight: bold">Berita FIK</li>
+            <span style="color: gray"> |</span>
+            <li>Politik</li>
+            <span style="color: gray"> |</span>
+            <li>Sekitar FIK</li>
+            <span style="color: gray"> |</span>
+            <li>Event FIK</li>
+          </ul>
+        </div>
+
+        <!--Menampilkan navigasi bar yang berisi alamat ke link atau page tertentu-->
+        <!-- Tooltip -->
+        <div class="tooltip-wrapper">
+          <p class="tooltip-text">Tampil Rinci</p>
+        </div>
+      </div>
+
+      <!-- Blog -->
+      <div class="blog-wrapper">
+        <!-- Left Blog -->
+        <div class="left-blog-wrapper">
+          <!-- Blog title atau judul dari blog pada website-->
+          <div class="blog-title">
+            <h1>
+              Ini dia! Pesona Massachusetts Institute of Technology yang Menjadi Kampus Incaran Mahasiswa Indonesia
+            </h1>
+          </div>
+          <!-- Publish Date -->
+          <div class="publish-date">
+            <p>15:00, Rabu, 6 Maret 2024 oleh Anja Bunga Aditya</p>
+          </div>
+
+          <!--Source gambar yang digunakan-->
+          <!-- Image -->
+          <div class="image-wrapper">
+            <img src="https://3.bp.blogspot.com/-eluoTpBOrng/WSqBrGcC8dI/AAAAAAAAALI/yBLkuT97jvUhGoz5QXC4oTRfoZjb75yRACLcB/w1200-h630-p-k-no-nu/o-MIT-CAMPUS-facebook.jpg" />
+          </div>
+
+          <!-- blog text -->
+          <div class="blog-text-wrapper">
+            <p class="blog-text">
+             <b> Jakarta </b>- Massachusetts Institute of Technology atau yang biasa disingkat MIT adalah institusi riset swasta yang berada di Cambridge, Boston, Amerika Serikat. William Barton Rogers adalah orang yang berada di balik pendirian MIT dengan tujuan menjawab kemajuan teknologi dan industri yang berkembang di Amerika Serikat. 
+              Seperti namanya, MIT utamanya dikenal karena program-program yang berkaitan dengan teknologi serta kemajuannya dalam bidang STEM (Science, Technology, Engineering, and Mathematics). 
+            </p>
+            <p class="blog-text">
+                Reputasi MIT sebagai salah satu perguruan tinggi terbaik di dunia sudah dikenal sejak lama dan masih terjaga hingga saat ini. Tak cuma untuk strata pendidikan sarjana, reputasi ini juga berlaku untuk tingkat pendidikan pascasarjana maupun program riset. 
+                Selama sepuluh tahun berturut-turut, MIT resmi menempati posisi puncak universitas terbaik di dunia berdasarkan QS World University Ranking. Di samping 12 jurusan yang menempati peringkat pertama ada lagi dua jurusan yang menempati peringkat kedua.
+                Kualitas pendidikan yang sangat apik dari MIT juga terlihat dari alumni yang dihasilkan. Survei pada 2021 menunjukkan bahwa lulusan MIT juga menjadi hal lain yang dapat menjadi tolak ukur. Sebanyak 95% lulusan sarjana MIT berhasil mendapat pekerjaan maupun langsung melanjutkan studi begitu usai wisuda. 
+            </p>
+            <p class="blog-text">
+                MIT terdiri dari lima departemen utama, yakni:
+                <ul>
+                1. The Program in Art, Culture, and Technology</ul>
+                <ul>
+                2. The Department of Architecture</ul>
+                <ul>
+                3. The Department of Urban Studies + Planning</ul>
+                <ul>
+                4. The Center of Real Estate</ul>
+                <ul>
+                5. The Media Laboratory</ul>
+                Jurusan yang berkaitan dengan STEM seperti ilmu komputer, fisika, matematika, dan beberapa engineering sudah pasti menjadi jurusan paling populer di MIT yang menjadi incaran calon mahasiswa dari berbagai belahan dunia. 
+            </p>
+          </div>
+
+          <div
+            style="
+              font-weight: bold;
+              color: #0096c7;
+              cursor: pointer;
+              font-size: 22px;
+              padding-bottom: 24px;
+            "
+          >
+            <p
+              class="more-text"
+              style="padding-top: 12px; padding-bottom: 12px"
+            >
+            <!--Link yang menuju ke halaman selanjutnya-->
+              <a href="#">Selengkapnya >></a>
+            </p>
+          </div>
+
+          <hr style="width: 100%" />
+        </div>
+
+        <!-- right blog -->
+        <div class="right-blog-wrapper">
+          <div class="table-wrapper" style="font-size: 24px">
+            <!-- table header -->
+            <div style="padding-bottom: 36px">
+              <div
+                class="table-header"
+                style="display: flex; justify-content: space-between"
+              >
+                <p style="text-decoration: none;">Berita Terhangat</p>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  viewBox="0 0 24 24"
+                >
+                  <g fill="none">
+                    <path
+                      d="M24 0v24H0V0zM12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035c-.01-.004-.019-.001-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022m-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"
+                    />
+                    <path
+                      fill="black"
+                      d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12S6.477 2 12 2m0 2a8 8 0 1 0 0 16a8 8 0 0 0 0-16m0 2a1 1 0 0 1 .993.883L13 7v4.586l2.707 2.707a1 1 0 0 1-1.32 1.497l-.094-.083l-3-3a1 1 0 0 1-.284-.576L11 12V7a1 1 0 0 1 1-1"
+                    />
+                  </g>
+                </svg>
+              </div>
+
+              <div class="table-wrapper">
+                <table class="table-list" style="width: 100%; ">
+                  <tr>
+                    <!--Menu-menu yang ditampilkan pada blog di sebelah kanan-->
+                    <td class="table-list-wrapper">
+                      <a href="#"><p>SNBT Fakultas Ilmu Komputer</p></a>
+                      <a href="#"><p><p style="color: gray;">17:49</p></p></a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="table-list-wrapper">
+                      <a href="#"><p>Zona Integritas</p></a>
+                      <p style="color: gray; text-align: right;">15:40</p>
+                      <!-- <p style="color: gray;">15:40</p> -->
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="table-list-wrapper">
+                     <a href="#"><p>Perkuliahan Bauran</p></a>
+                      <p style="color: gray;">12:56</p>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+
+              <p
+                style="
+                  font-size: 16px;
+                  padding-top: 10px;
+                  color: #0096c7;
+                  font-weight: bolder;
+                "
+              >
+                <a href="#">Browse all >></a>
+              </p>
+            </div>
+
+            <div style="padding-bottom: 36px">
+              <div
+                class="table-header"
+                style="display: flex; justify-content: space-between"
+              >
+                <p style="text-decoration: none;">Sering dilihat</p>
+              </div>
+
+              <div class="table-wrapper">
+                <table class="table-list" style="width: 100%">
+                  <tr>
+                    <td class="table-list-wrapper">
+                      <p><span style="color: gray;">1. </span><a href="#">FIK FAIR</a></p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="table-list-wrapper">
+                      <p><span style="color: gray;">2. </span><a href="#">Dies Natalis Fakultas Ilmu Komputer</a></p>
+                      
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="table-list-wrapper">
+                      <p><span style="color: gray;">3. </span><a href="#">Perkuliahan FIK</a></p>
+                      
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="table-list-wrapper">
+                      <p><span style="color: gray;">4. </span><a href="#">Sekitar FIK</a></p>
+                      
+                    </td>
+                  </tr>
+                </table>
+              </div>
+
+              <p
+                style="
+                  font-size: 16px;
+                    padding-top: 10px;
+                    color: #0096c7;
+                  font-weight: bolder;
+                "
+              >
+                <a href="#">Browse all >></a>
+              </p>
+            </div>
+
+            <div style="padding-bottom: 36px">
+              <div
+                class="table-header"
+                style="display: flex; justify-content: space-between"
+              >
+                <p style="text-decoration: none;">Jaringan Berita</p>
+                
+              </div>
+
+              <div class="table-wrapper">
+                <table class="table-list" style="width: 100%">
+                  <tr>
+                    <td class="table-list-wrapper">
+                      <a href="#"><p>Website UPNVJ</p></a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="table-list-wrapper">
+                     <a href="#"><p>Website FIK UPNVJ</p></a>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+
+              <p
+                style="
+                  font-size: 16px;
+                  padding-top: 10px;
+                  color: #0096c7;
+                  font-weight: bolder;
+                "
+              >
+                <a href="#">Browse all >></a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <!-- Socmed -->
+        <div class="socmed-wrapper">
+          <p class="socmed-wrapper-text">Follow Us (Media Social)</p>
+          <div
+            class="socmed"
+            style="display: flex; align-items: center; gap: 4px"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <g fill="none">
+                <path
+                  d="M24 0v24H0V0zM12.594 23.258l-.012.002l-.071.035l-.02.004l-.014-.004l-.071-.036c-.01-.003-.019 0-.024.006l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.016-.018m.264-.113l-.014.002l-.184.093l-.01.01l-.003.011l.018.43l.005.012l.008.008l.201.092c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022m-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.003-.011l.018-.43l-.003-.012l-.01-.01z"
+                />
+                <path
+                  fill="#0096c7"
+                  d="M12.633 2.108c.79-.06 1.45.389 1.783.99l1.22 2.21c1.742-.112 3.082.532 4.048 1.398c1.059.95 1.652 2.144 1.93 2.824c.3.733.078 1.5-.39 2.002l-1.726 1.844c.646 1.622.447 3.095-.078 4.282c-.576 1.3-1.529 2.233-2.09 2.708c-.604.512-1.402.538-2.024.247l-2.287-1.071c-1.343 1.115-2.806 1.381-4.096 1.248c-1.415-.145-2.597-.763-3.222-1.15c-.674-.417-.945-1.168-.86-1.849l.312-2.506c-1.476-.933-2.181-2.242-2.454-3.51c-.298-1.39-.076-2.705.099-3.42c.188-.769.818-1.26 1.492-1.389l2.48-.478c.431-1.691 1.458-2.767 2.58-3.417c1.23-.714 2.55-.909 3.283-.963"
+                />
+              </g>
+            </svg>
+            <a href="#"><p>Instagram</p></a>
+          </div>
+
+          <div
+            class="socmed"
+            style="display: flex; align-items: center; gap: 4px"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <g fill="none">
+                <path
+                  d="M24 0v24H0V0zM12.594 23.258l-.012.002l-.071.035l-.02.004l-.014-.004l-.071-.036c-.01-.003-.019 0-.024.006l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.016-.018m.264-.113l-.014.002l-.184.093l-.01.01l-.003.011l.018.43l.005.012l.008.008l.201.092c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022m-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.003-.011l.018-.43l-.003-.012l-.01-.01z"
+                />
+                <path
+                  fill="#0096c7"
+                  d="M12.633 2.108c.79-.06 1.45.389 1.783.99l1.22 2.21c1.742-.112 3.082.532 4.048 1.398c1.059.95 1.652 2.144 1.93 2.824c.3.733.078 1.5-.39 2.002l-1.726 1.844c.646 1.622.447 3.095-.078 4.282c-.576 1.3-1.529 2.233-2.09 2.708c-.604.512-1.402.538-2.024.247l-2.287-1.071c-1.343 1.115-2.806 1.381-4.096 1.248c-1.415-.145-2.597-.763-3.222-1.15c-.674-.417-.945-1.168-.86-1.849l.312-2.506c-1.476-.933-2.181-2.242-2.454-3.51c-.298-1.39-.076-2.705.099-3.42c.188-.769.818-1.26 1.492-1.389l2.48-.478c.431-1.691 1.458-2.767 2.58-3.417c1.23-.714 2.55-.909 3.283-.963"
+                />
+              </g>
+            </svg>
+            <a href="#"><p>Tiktok</p></a>
+          </div>
+
+          <div
+            class="socmed"
+            style="display: flex; align-items: center; gap: 4px"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <g fill="none">
+                <path
+                  d="M24 0v24H0V0zM12.594 23.258l-.012.002l-.071.035l-.02.004l-.014-.004l-.071-.036c-.01-.003-.019 0-.024.006l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.016-.018m.264-.113l-.014.002l-.184.093l-.01.01l-.003.011l.018.43l.005.012l.008.008l.201.092c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022m-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.003-.011l.018-.43l-.003-.012l-.01-.01z"
+                />
+                <path
+                  fill="#0096c7"
+                  d="M12.633 2.108c.79-.06 1.45.389 1.783.99l1.22 2.21c1.742-.112 3.082.532 4.048 1.398c1.059.95 1.652 2.144 1.93 2.824c.3.733.078 1.5-.39 2.002l-1.726 1.844c.646 1.622.447 3.095-.078 4.282c-.576 1.3-1.529 2.233-2.09 2.708c-.604.512-1.402.538-2.024.247l-2.287-1.071c-1.343 1.115-2.806 1.381-4.096 1.248c-1.415-.145-2.597-.763-3.222-1.15c-.674-.417-.945-1.168-.86-1.849l.312-2.506c-1.476-.933-2.181-2.242-2.454-3.51c-.298-1.39-.076-2.705.099-3.42c.188-.769.818-1.26 1.492-1.389l2.48-.478c.431-1.691 1.458-2.767 2.58-3.417c1.23-.714 2.55-.909 3.283-.963"
+                />
+              </g>
+            </svg>
+            <a href="https://new-fik.upnvj.ac.id/"><p>Website FIK UPNVJ</p></a>
+          </div>
+        </div>
+
+        <div
+          class="socmed"
+          style="display: flex; align-items: center; font-size: 24px; gap: 10px"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1em"
+            height="1em"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill="black"
+              d="M11.88 9.14c1.28.06 1.61 1.15 1.63 1.66h1.79c-.08-1.98-1.49-3.19-3.45-3.19C9.64 7.61 8 9 8 12.14c0 1.94.93 4.24 3.84 4.24c2.22 0 3.41-1.65 3.44-2.95h-1.79c-.03.59-.45 1.38-1.63 1.44c-1.31-.04-1.86-1.06-1.86-2.73c0-2.89 1.28-2.98 1.88-3M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8"
+            />
+          </svg>
+          <!--Tag copyright-->
+          <p style="color: black;">Fakultas Ilmu Komputer</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
